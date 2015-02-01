@@ -11,11 +11,9 @@ import javax.persistence.Entity;
  * @author Joelson
  *
  */
-@Entity
+
 public class Usuario implements Serializable {
 	
-	private Long id;
-	private String nome;
-	private String endereco;
+
 
 }
