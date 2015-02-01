@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>ProjetoSpring</display-name>
-
-	<!-- Welcome page -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ProjetoSpring</display-name>
+  	<!-- Welcome page -->
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
@@ -19,13 +15,7 @@
 	 <!-- Bootstrap the root application context as usual using ContextLoaderListener -->
   	<listener>
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  	</listener>
-	
-	<listener>
-  		<listener-class>
-      		org.springframework.web.context.request.RequestContextListener
-  		</listener-class>
-	</listener>
+  	</listener>	
 	
 	<!-- Define a localização em que o estado é salvo. Neste caso temos dois: 
 		server (padrão) que tipicamente salva em HttpSession e client que salva como 
@@ -41,17 +31,7 @@
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
 	</context-param>
-	
-	<context-param>
-		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
-		<param-value>resources.application</param-value>
-	</context-param>
-
-	<context-param>
-		<param-name>org.apache.myfaces.SOME_USEFUL_PARAM</param-name>
-		<param-value>someValue</param-value>
-	</context-param>
-	
+			
 	<!-- JSF mapping -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
