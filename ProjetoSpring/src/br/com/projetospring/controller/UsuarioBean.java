@@ -9,6 +9,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import br.com.projetospring.entity.Usuario;
 import br.com.projetospring.service.UsuarioService;
 
@@ -16,14 +21,26 @@ import br.com.projetospring.service.UsuarioService;
  * @author Joelson
  *
  */
+@Controller
 @ManagedBean(name="usuarioBean")
 @ViewScoped
 public class UsuarioBean {
 	
-	@ManagedProperty("#{usuarioService}")
+
+	@ManagedProperty("#{usuarioService}")	
 	private UsuarioService usuarioService;
 	
-	private Usuario usuario;
+	
+	public UsuarioBean(UsuarioService usuarioService) {
+		super();
+		this.usuarioService = usuarioService;
+	}
+
+	public UsuarioBean() {
+		
+	}
+	
+	private Usuario usuario = new Usuario();
 	
 	public List<Usuario> usuarios;
 	

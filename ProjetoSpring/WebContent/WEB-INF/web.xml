@@ -11,11 +11,16 @@
   	 	<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
-	
-	 <!-- Bootstrap the root application context as usual using ContextLoaderListener -->
-  	<listener>
-      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  	</listener>	
+	  	
+  	   <!-- The Bootstrap listener to start up and shut down Spring's root WebApplicationContext. It is registered to Servlet Container -->
+      <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+      </listener>
+      
+      <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+      </listener>
+  	
 	
 	<!-- Define a localização em que o estado é salvo. Neste caso temos dois: 
 		server (padrão) que tipicamente salva em HttpSession e client que salva como 

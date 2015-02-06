@@ -6,6 +6,8 @@ package br.com.projetospring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import br.com.projetospring.dao.impl.UsuarioDAO;
@@ -16,11 +18,23 @@ import br.com.projetospring.entity.Usuario;
  *
  */
 @Service("usuarioService")
+@Qualifier("usuarioService")
 public class UsuarioService {
 	
 	@Autowired
 	private UsuarioDAO dao;
 	
+	public UsuarioService() {
+		
+	}		
+	
+	public UsuarioService(UsuarioDAO dao) {
+		super();
+		this.dao = dao;
+	}
+
+
+
 	public List<Usuario> getTodosUsuarios(){
 		return dao.buscarTodos();
 	}

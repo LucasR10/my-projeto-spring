@@ -4,16 +4,13 @@
 package br.com.projetospring.dao;
 
 import java.util.List;
-
-import org.springframework.stereotype.Component;
-
 import br.com.projetospring.entity.Usuario;
 
 /**
  * @author Joelson
  *
  */
-@Component
+
 public interface IUsuarioDAO {
 
 	public List<Usuario> buscarTodos();

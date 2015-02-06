@@ -15,11 +15,11 @@
 
 	<!-- Define os pacotes onde o Spring vai procurar seus beans anotados -->
 
-	<context:component-scan base-package="br.com.projetospring.*" />
+	<context:component-scan base-package="br.com.projetospring.*" />		
 
 	<!-- Define que as transações irão ser anotadas -->
 
-	<tx:annotation-driven />
+	 <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
 
 	<!-- Configuração do Banco de Dados -->
 
