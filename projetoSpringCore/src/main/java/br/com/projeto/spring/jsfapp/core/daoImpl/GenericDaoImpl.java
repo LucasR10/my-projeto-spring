@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.projeto.spring.jsfapp.core.dao.GenericDao;
@@ -17,6 +18,7 @@ import br.com.projeto.spring.jsfapp.core.dao.GenericDao;
  * */
 
 @Transactional
+@Repository
 public abstract class GenericDaoImpl <T> implements GenericDao<T, Long> {
 
 	
@@ -62,6 +64,12 @@ public abstract class GenericDaoImpl <T> implements GenericDao<T, Long> {
 	@Transactional(readOnly=true)
 	public T loadByUserEmailAndPassword(String email, String password) {
 		return null;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly=true)
+	public List<T> loadPagination(int first, int pageSize) {
+		return  emManager.createQuery(" SELECT obj FROM  "+icClass.getSimpleName()+ " obj ").setFirstResult(first).setMaxResults(pageSize).getResultList();
 	}
 
 }

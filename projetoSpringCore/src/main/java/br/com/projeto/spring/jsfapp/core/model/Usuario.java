@@ -1,6 +1,7 @@
 package br.com.projeto.spring.jsfapp.core.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,14 +34,14 @@ public class Usuario implements Serializable {
    
 	private String  email;
     
-	private String  dataCadatro;
+	private Date dataCadatro;
     
     
     public Usuario() {
 		
 	}
     
-	public Usuario(String nome, String email, String dataCadatro) {
+	public Usuario(String nome, String email, Date dataCadatro) {
 		super();
 		this.nome = nome;
 		this.email = email;
@@ -71,13 +72,13 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
-	public String getDataCadatro() {
+	public Date getDataCadatro() {
 		return dataCadatro;
 	}
 
 	@Column(name="data_cadastro")
 	@Temporal(TemporalType.TIMESTAMP)
-	public void setDataCadatro(String dataCadatro) {
+	public void setDataCadatro(Date dataCadatro) {
 		this.dataCadatro = dataCadatro;
 	}
 

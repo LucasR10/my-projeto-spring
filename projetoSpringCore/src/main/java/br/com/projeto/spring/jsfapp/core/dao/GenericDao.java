@@ -24,5 +24,7 @@ public interface GenericDao <T , K extends Number>  {
 	public List<T> findAll();
 	
 	public T loadByUserEmailAndPassword(String email ,String password);
+	
+	public List<T> loadPagination (int first, int pageSize) ;
 
 }
