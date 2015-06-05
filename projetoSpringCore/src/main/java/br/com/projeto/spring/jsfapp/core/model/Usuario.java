@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.stereotype.Component;
-
 
 /**
  * @author Lucas Rocha
@@ -20,7 +18,7 @@ import org.springframework.stereotype.Component;
  * 
  * */
 
-@Component("usuario")
+
 @Entity
 public class Usuario implements Serializable {
 
