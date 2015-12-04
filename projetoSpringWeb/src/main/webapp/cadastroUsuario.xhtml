@@ -5,13 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head></h:head>
-<h:body>
- <h:panelGrid columns="2" >
-	<h:outputLabel value="Nome" />
-	<h:inputText value="#{usuarioBean.nome}" />
+     <h:body>
+          <ui:composition template="META-INF/templete/template.xhtml">
 
-	<h:outputLabel value="Nome" />
-	<h:inputText value="#{usuarioBean.email}" />
-</h:panelGrid>
-</h:body>
+    	   </ui:composition>
+    </h:body>
 </html>
